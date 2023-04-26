@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Recipe_App
 {
     internal class AddNewRecipe
@@ -31,59 +26,68 @@ namespace Recipe_App
                 switch (userInput)
                 {
                     case "1":
-                        Console.Write("Enter the name of the recipe: ");
-                        recipeName = Console.ReadLine();
-
-                        Console.Write("Enter the number of ingredients: ");
-                        numIngredients = int.Parse(Console.ReadLine());
-
-                        // Move array initialization code here
-                        ingredientNames = new string[numIngredients];
-                        ingredientQuantities = new double[numIngredients];
-                        ingredientUnits = new string[numIngredients];
-
-                        for (int i = 0; i < numIngredients; i++)
+                        try
                         {
-                            Console.Write($"Enter the name of ingredient {i + 1}: ");
-                            ingredientNames[i] = Console.ReadLine();
+                            Console.Write("Enter the name of the recipe: ");
+                            recipeName = Console.ReadLine();
 
-                            Console.Write($"Enter the quantity of {ingredientNames[i]}: ");
-                            ingredientQuantities[i] = double.Parse(Console.ReadLine());
+                            Console.Write("Enter the number of ingredients: ");
+                            numIngredients = int.Parse(Console.ReadLine());
 
-                            Console.Write($"Enter the unit of measurement for {ingredientNames[i]}: ");
-                            ingredientUnits[i] = Console.ReadLine();
+                            // Move array initialization code here
+                            ingredientNames = new string[numIngredients];
+                            ingredientQuantities = new double[numIngredients];
+                            ingredientUnits = new string[numIngredients];
+
+                            for (int i = 0; i < numIngredients; i++)
+                            {
+                                Console.Write($"Enter the name of ingredient {i + 1}: ");
+                                ingredientNames[i] = Console.ReadLine();
+
+                                Console.Write($"Enter the quantity of {ingredientNames[i]}: ");
+                                ingredientQuantities[i] = double.Parse(Console.ReadLine());
+
+                                Console.Write($"Enter the unit of measurement for {ingredientNames[i]}: ");
+                                ingredientUnits[i] = Console.ReadLine();
+                            }
+
+                            Console.Write("Enter the number of steps: ");
+                            numSteps = int.Parse(Console.ReadLine());
+
+                            steps = new string[numSteps];
+
+                            for (int i = 0; i < numSteps; i++)
+                            {
+                                Console.Write($"Enter step {i + 1}: ");
+                                steps[i] = Console.ReadLine();
+                            }
+
+                            Console.WriteLine("\nRecipe Details:");
+                            Console.WriteLine($"Name: {recipeName}");
+
+                            Console.WriteLine("Ingredients:");
+                            for (int i = 0; i < numIngredients; i++)
+                            {
+                                Console.WriteLine($"{ingredientQuantities[i]} {ingredientUnits[i]} {ingredientNames[i]}");
+                            }
+
+                            Console.WriteLine("Steps:");
+                            for (int i = 0; i < numSteps; i++)
+                            {
+                                Console.WriteLine($"{i + 1}. {steps[i]}");
+                            }
                         }
-
-                        Console.Write("Enter the number of steps: ");
-                        numSteps = int.Parse(Console.ReadLine());
-
-                        steps = new string[numSteps];
-
-                        for (int i = 0; i < numSteps; i++)
+                        catch (FormatException e)
                         {
-                            Console.Write($"Enter step {i + 1}: ");
-                            steps[i] = Console.ReadLine();
+                            Console.WriteLine("Error: Invalid format entered. Please enter a valid number.");
                         }
-
-                        Console.WriteLine("\nRecipe Details:");
-                        Console.WriteLine($"Name: {recipeName}");
-
-                        Console.WriteLine("Ingredients:");
-                        for (int i = 0; i < numIngredients; i++)
+                        catch (Exception e)
                         {
-                            Console.WriteLine($"{ingredientQuantities[i]} {ingredientUnits[i]} {ingredientNames[i]}");
-                        }
-
-                        Console.WriteLine("Steps:");
-                        for (int i = 0; i < numSteps; i++)
-                        {
-                            Console.WriteLine($"{i + 1}. {steps[i]}");
+                            Console.WriteLine("Error: " + e.Message);
                         }
                         break;
-
                 }
             }
         }
     }
-
 }
