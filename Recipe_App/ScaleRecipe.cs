@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
+
 namespace Recipe_App
 {
     internal class scaleRecipe
     {
-        public static void ScaleRecipe()
+        public void ScaleRecipe()
         {
             Console.Write("Enter the name of the recipe: ");
             string recipeName = Console.ReadLine();
@@ -86,4 +86,3 @@ namespace Recipe_App
         }
     }
 }
-*/
