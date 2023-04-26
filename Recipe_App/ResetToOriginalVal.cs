@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Recipe_App
 {
-    internal class ScaleRecipe
+    internal class ResetToOriginalVal
     {
-        public void RecipeScaler()
+        public void reset()
         {
             Console.Write("Enter the name of the recipe: ");
             string recipeName = Console.ReadLine();
@@ -58,6 +58,9 @@ namespace Recipe_App
                 Console.WriteLine($"{i + 1}. {steps[i]}");
             }
 
+            double[] originalQuantities = new double[numIngredients];
+            Array.Copy(ingredientQuantities, originalQuantities, numIngredients);
+
             Console.WriteLine("\nDo you want to scale the recipe? (Y/N)");
             string scaleRecipe = Console.ReadLine();
 
@@ -81,9 +84,30 @@ namespace Recipe_App
                 {
                     Console.WriteLine($"{i + 1}. {steps[i]}");
                 }
+
+                Console.WriteLine("\nDo you want to reset the quantities to their original values? (Y/N)");
+                string resetQuantities = Console.ReadLine();
+
+                if (resetQuantities.ToLower() == "y")
+                {
+                    Array.Copy(originalQuantities, ingredientQuantities, numIngredients);
+
+                    Console.WriteLine("\nOriginal Recipe Details:");
+                    Console.WriteLine($"Name: {recipeName}");
+
+                    Console.WriteLine("Ingredients:");
+                    for (int i = 0; i < numIngredients; i++)
+                    {
+                        Console.WriteLine($"{ingredientQuantities[i]} {ingredientUnits[i]} {ingredientNames[i]}");
+                    }
+
+                    Console.WriteLine("Steps:");
+                    for (int i = 0; i < numSteps; i++)
+                    {
+                        Console.WriteLine($"{i + 1}. {steps}");
+                    }
+                }
             }
-            Console.ReadKey();
         }
     }
 }
-

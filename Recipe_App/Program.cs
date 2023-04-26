@@ -10,9 +10,10 @@ namespace Recipe_App
     {
         public static void Main(string[] args)
         {
-            Recipe_App.scaleRecipe recipe = new Recipe_App.scaleRecipe();
-            recipe.ScaleRecipe();
-            //Recipe_Application.ResetQuantValue rv = new();
+            Recipe_App.ScaleRecipe recipe = new Recipe_App.ScaleRecipe();
+            recipe.RecipeScaler();
+            Recipe_App.ResetToOriginalVal reset = new Recipe_App.ResetToOriginalVal();
+            reset.reset();
             //Recipe_Application.NewRecipe nr = new();
 
             Console.Title = "Recipe Application";
