@@ -13,7 +13,7 @@ namespace Recipe_App
             Recipe_App.ScaleRecipe recipe = new Recipe_App.ScaleRecipe();
             recipe.RecipeScaler();
             Recipe_App.ResetToOriginalVal reset = new Recipe_App.ResetToOriginalVal();
-            reset.reset();
+            reset.resetValues();
             //Recipe_Application.NewRecipe nr = new();
 
             Console.Title = "Recipe Application";

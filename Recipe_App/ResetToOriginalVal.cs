@@ -8,7 +8,7 @@ namespace Recipe_App
 {
     internal class ResetToOriginalVal
     {
-        public void reset()
+        public void resetValues()
         {
             Console.Write("Enter the name of the recipe: ");
             string recipeName = Console.ReadLine();
