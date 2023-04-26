@@ -14,7 +14,8 @@ namespace Recipe_App
             recipe.RecipeScaler();
             Recipe_App.ResetToOriginalVal reset = new Recipe_App.ResetToOriginalVal();
             reset.resetValues();
-            //Recipe_Application.NewRecipe nr = new();
+            Recipe_App.AddNewRecipe newrecipe = new Recipe_App.AddNewRecipe();
+            newrecipe.NewRecipe();
 
             Console.Title = "Recipe Application";
             Console.Write("Enter the name of the recipe: ");
