@@ -1,15 +1,47 @@
-# Recipe_App
+# Recipe Application
 
-The class with the main method 
+The Recipe Application is a console-based program that allows you to manage recipes, scale recipe quantities, and view recipe details.
 
-This program is a recipe application that allows users to enter the name of a recipe, the number of ingredients, the quantity and unit of each ingredient, and the steps required to make the recipe. It then prints out the recipe details, including the name of the recipe, the ingredients with their respective quantities and units, and the steps required to make the recipe.
+## Getting Started
 
-To run this program, you will need to have Microsoft Visual Studio or a similar development environment installed on your computer. Once you have the development environment set up, you can follow these steps to run the program:
+To use the Recipe Application, follow these steps:
 
-Open the Recipe_App solution file in your development environment.
-Build the solution to compile the code.
-Run the program by clicking the Run button in the development environment.
-The program will prompt you to enter the name of the recipe, the number of ingredients, and the details of each ingredient, including the quantity and unit of measurement.
-After you have entered the details of the ingredients, the program will prompt you to enter the number of steps required to make the recipe, followed by the details of each step.
-Once you have entered all the required details, the program will print out the recipe details, including the name of the recipe, the ingredients with their respective quantities and units, and the steps required to make the recipe.
-You can then close the program by pressing any key.
+1. Clone the repository or download the source code files.
+
+2. Open the solution in your preferred development environment (e.g., Visual Studio).
+
+3. Build the solution to compile the code.
+
+4. Run the program.
+
+## Usage
+
+Upon running the program, you will be presented with a menu of options. Use the corresponding numbers to select an option:
+
+1. **Enter a new recipe**: This option allows you to enter the details of a new recipe, including its name, ingredients, and steps.
+
+2. **Scale a recipe**: Select this option to choose a recipe and scale its quantities by a specified factor. This can be useful when you need to adjust the servings or portions of a recipe.
+
+3. **Reset a recipe**: If you have scaled a recipe and want to revert it to its original quantities, select this option and choose the recipe to reset.
+
+4. **Display all recipes**: This option displays a list of all entered recipes. You can select a recipe to view its details, including ingredients, steps, and total calories.
+
+5. **Exit the program**: Choose this option to exit the Recipe Application.
+
+Note: When entering numeric values, such as ingredient quantities, make sure to provide valid numbers. The program will prompt you if any invalid input is detected.
+
+## Colored Text
+
+The Recipe Application utilizes colored text to enhance the user experience. Here's a quick guide to the text colors used:
+
+- **Red**: Indicates an error or an invalid input.
+- **Yellow**: Highlights warnings, such as when the total calories of a recipe exceed 300.
+
+## Contributing
+
+Contributions to the Recipe Application are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+The Recipe Application is open source and is released under the [MIT License](LICENSE). You are free to use, modify, and distribute the code as per the terms of the license.
+
